@@ -1,0 +1,54 @@
+.program-curriculum {
+  padding: 2rem $site-padding;
+  display: flex;
+  flex-direction: column;
+  @include media($tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    line-height: 1.75;
+    div {
+      h4 {
+        margin-top: 0;
+      }
+    }
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  img {
+    @include mobile-card;
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+    width: 100%;
+
+    @include media($tablet) {
+      border-radius: $border-radius;
+      height: 400px;
+    }
+  }
+  .curriculum {
+    display: flex;
+    flex-direction: column;
+    @include media($tablet) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+    }
+  }
+  .additional-info {
+    display: flex;
+    flex-direction: column;
+    @include media($tablet) {
+      width: 100%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+  }
+}

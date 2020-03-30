@@ -1,0 +1,86 @@
+.enroll-page {
+  h3,
+  h4 {
+    margin: 0;
+  }
+  padding: 0 $site-padding-mobile;
+  display: flex;
+  @include media($tablet) {
+    padding: 0 $site-padding;
+  }
+
+  .classes-box {
+    align-self: center;
+    border: 1px solid $color_grey;
+    @include media($tablet) {
+      @include desktop-card;
+      width: 40%;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 0px;
+      * {
+        color: $color_paragraph;
+      }
+    }
+    .class-header {
+      background-color: $color_yellow;
+      height: 25%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      position: relative;
+      padding: 2rem;
+    }
+    .class-img {
+      height: 202px;
+      width: 281px;
+      object-fit: contain;
+      position: absolute;
+      right: 5%;
+      top: 10%;
+      display: none;
+      @include media($tablet) {
+        display: inline;
+      }
+    }
+
+    .post-meta {
+      border: none;
+      margin: 0 1rem;
+      @include media($tablet) {
+        margin: 0;
+        padding: 1.5rem;
+        height: 60%;
+      }
+      .post-data-header {
+        display: flex;
+        justify-content: space-between;
+        height: 40%;
+        border-bottom: 1px solid $color_grey;
+        font-size: $font_size_main + 2;
+        @include media($tablet) {
+          display: inline;
+        }
+        .class-title {
+          position: absolute;
+          transform: translate(0 -2.6rem);
+          @include media($tablet) {
+            position: relative;
+            transform: translate(0 0);
+          }
+        }
+      }
+
+      p {
+        margin: 0.5rem 0;
+        text-transform: none;
+        color: $color_paragraph;
+        img {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

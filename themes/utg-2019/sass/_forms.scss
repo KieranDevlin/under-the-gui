@@ -1,0 +1,120 @@
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-weight: bold;
+// font-size: 1rem;
+// color: $color_white;
+// background-color: $color_blue;
+// padding: 1rem 1.75rem;
+// margin: 0 0 0 2rem;
+// border-radius: 0.25rem;
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  border-radius: $border-radius;
+  background: $color_blue;
+  color: $color_white;
+  @include font-size(0.75);
+  line-height: 1;
+  padding: 1rem 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font_header;
+
+  &:hover {
+    background-color: $color_white;
+    color: $color_blue;
+    border-color: $color_blue;
+  }
+
+  &:active,
+  &:focus {
+    color: $color_white;
+    background-color: darken($color_blue, 10%);
+  }
+
+  &:visited {
+    background-color: darken($color_blue, 10%);
+  }
+}
+
+.white-btn {
+  border-radius: $border-radius;
+  background: $color_white;
+  color: $color_blue;
+  @include font-size(0.75);
+  line-height: 1;
+  padding: 1rem 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font_header;
+
+  &:hover {
+    color: $color_white;
+    background-color: lighten($color_blue, 10%);
+  }
+
+  &:active,
+  &:focus {
+    color: $color_white;
+    background-color: darken($color_blue, 10%);
+  }
+}
+
+input#gform_submit_button_1,
+input#gform_submit_button_2,
+input#gform_next_button_2_15,
+input#gform_previous_button_2 {
+  align-self: center;
+  width: 11rem;
+  line-height: 0.5;
+  margin-bottom: 0;
+
+  &:hover {
+    color: $color_blue;
+    background-color: $color_white;
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken($color_blue, 10%);
+  }
+}
+
+/* Fields */
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+textarea {
+  color: $color_paragraph;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+
+  &:focus {
+    color: $color_black;
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'] {
+  padding: 1rem;
+}
+
+textarea {
+  padding-left: 3px;
+  width: 100%;
+}

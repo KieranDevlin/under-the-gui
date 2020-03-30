@@ -1,0 +1,151 @@
+.site-footer {
+  //   <---- MOBILE ---->
+
+  min-width: 100%;
+  background-color: $color_grey;
+
+  .footer-container {
+    padding: $base__space-unit 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .socialmedia-footer {
+    order: 2;
+
+    ul {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 1rem;
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    order: 1;
+
+    .footer-sidebar {
+      display: none;
+    }
+
+    .footer-logo-img {
+      width: 4rem;
+    }
+  }
+
+  .footer-menu {
+    display: flex;
+    justify-content: space-between;
+    order: 2;
+    padding: $base__space-unit / 2;
+    text-align: left;
+    font-family: $font_main;
+
+    ul {
+      li {
+        padding: 0 2vw;
+      }
+    }
+    .filler-text {
+      width: 200px;
+    }
+  }
+
+  .footer-sidebar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: $base__space-unit;
+    order: 4;
+    .widget_text {
+      .widget_title {
+        font-size: $font_size_main;
+      }
+    }
+  }
+
+  .copyright-info {
+    display: flex;
+    justify-content: center;
+    order: 4;
+    font-family: $font_main;
+    font-size: $font_size_main - 2px;
+    font-weight: 100;
+    color: $color_paragraph;
+  }
+
+  @include media($tablet) {
+    .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      order: 1;
+      text-align: left;
+
+      .footer-sidebar {
+        display: block;
+        text-align: left;
+        margin-top: $base__space-unit;
+      }
+
+      .footer-logo-img {
+        width: 6rem;
+      }
+    }
+
+    .footer-sidebar {
+      display: none;
+    }
+
+    .filler-text-container {
+      order: 2;
+      .filler-text {
+        width: 200px;
+      }
+    }
+
+    .socialmedia-footer {
+      display: flex;
+      justify-content: flex-end;
+      flex-shrink: 0;
+      order: 3;
+
+      ul {
+        display: flex;
+
+        li {
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+
+    .copyright-info {
+      position: absolute;
+      bottom: $base__space-unit / 2;
+      left: $base__space-unit * 2;
+      font-family: $font_main;
+      font-size: $font_size_main - 2px;
+      font-weight: 100;
+      color: $color_paragraph;
+    }
+  }
+}

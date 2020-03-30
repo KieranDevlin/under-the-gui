@@ -1,0 +1,39 @@
+.selector-container {
+  padding: 2rem $site-padding;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+
+  @include media($desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  h4 {
+    font-family: $font_header;
+    margin: 0.75rem 0;
+  }
+  select {
+    height: 50px;
+    width: 100%;
+  }
+}
+.locations-button-container {
+  display: flex;
+  justify-content: space-around;
+  button {
+    width: 192px;
+    font-size: 1rem;
+  }
+}
+
+.locations-ajax-container {
+  padding: 2rem $site-padding-mobile;
+  @include media($tablet) {
+    padding: 2rem $site-padding;
+  }
+  h2 {
+    margin: 0;
+  }
+}

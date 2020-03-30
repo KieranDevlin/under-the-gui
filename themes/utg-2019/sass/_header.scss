@@ -1,0 +1,395 @@
+.site-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  z-index: 2;
+
+  @include media($header-break) {
+    background-color: transparent;
+    padding: 0.125rem 0.75rem;
+  }
+
+  // add shaded background when mobile menu opens
+  &.toggle-menu::before {
+    content: '';
+    display: block;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    height: 1000vh;
+    width: 100vw;
+    z-index: 9;
+    background-color: rgba($color_black, 0.5);
+
+    @include media($header-break) {
+      content: none;
+    }
+  }
+  button {
+    background: none;
+    padding: 0;
+    border: none;
+  }
+  i {
+    color: $color_blue;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links {
+    width: 0px;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    margin: 0;
+    height: 1000vh;
+    background-color: $color_blue;
+    right: 0;
+    top: 0;
+    z-index: 20;
+
+    @include media($header-break) {
+      position: absolute;
+      height: auto;
+      top: auto;
+      background-color: transparent;
+      overflow: unset;
+    }
+
+    .left-arrow {
+      transition: transform 0.5s ease-in-out;
+      transform: rotate(0deg);
+    }
+  }
+
+  .toggle-menu {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding: 1.75rem;
+    margin: 0;
+    top: 0;
+    right: 0;
+    height: 1000vh;
+    width: 75vw;
+    background-color: $color_blue;
+    z-index: 20;
+
+    //font awesome arrow icons
+    .left-arrow {
+      color: $color_white;
+      transition: transform 0.5s ease-in;
+      transform: rotate(180deg);
+      padding: 0 0 0 2rem;
+      &:active,
+      &:focus {
+        background-color: $color_blue;
+        color: $color_white;
+      }
+    }
+
+    .main-navigation {
+      text-align: left;
+      border-bottom: 1px solid $color_white;
+    }
+
+    .mobile-info-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 0.75rem;
+      font-weight: normal;
+      color: $color_blue;
+      background-color: $color_white;
+      padding: 0.66rem 0.8125rem;
+      margin: 0 0 0 2rem;
+      border-radius: $border-radius;
+    }
+    .nav-links {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1rem;
+        color: $color_blue;
+        background-color: $color_white;
+        padding: 1rem 1.75rem;
+        margin: 0 0 0 2rem;
+        border-radius: $border-radius;
+      }
+    }
+
+    a {
+      color: $color_white;
+    }
+    li {
+      padding-bottom: 1rem;
+      a {
+        text-transform: capitalize;
+      }
+    }
+    .mobile-franchise-link {
+      text-align: left;
+      padding-top: 1rem;
+    }
+  }
+
+  //opened menu in mobile version
+  .background-shade {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  li {
+    font-family: $font_main;
+    text-transform: uppercase;
+  }
+
+  img {
+    height: 4.75rem;
+  }
+
+  @include media($header-break) {
+    // padding: 0.75rem $site-padding;
+    align-items: center;
+
+    .mobile-franchise-link {
+      display: none;
+    }
+    button {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: $site-padding-mobile;
+
+      @include media($desktop) {
+        margin-right: $site-padding;
+      }
+
+      .menu {
+        display: flex;
+
+        a {
+          color: $color_black;
+        }
+        li {
+          display: block;
+          padding: 1rem $base__space-unit;
+
+          &:last-child {
+            padding-right: 4rem;
+            border-right: 1px solid $color_black;
+          }
+        }
+
+        .current-menu-item {
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  .fa-bars:before {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid $color-grey;
+    box-shadow: 0 8px 6px -6px $color_paragraph;
+    padding: $base__space-unit / 3;
+    border-radius: $border-radius;
+  }
+}
+
+.mobile-open-menu {
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media($header-break) {
+    display: none;
+  }
+}
+
+// compensate for wordpress admin bar
+.logged-in {
+  .mobile-open-menu {
+    padding-top: 46px;
+  }
+
+  .site-header {
+    .mobile-menu {
+      .fa-bars {
+        &::before {
+          top: 61px;
+        }
+      }
+    }
+  }
+}
+
+.menu-nav-menu-container {
+  display: none;
+  @include media($header-break) {
+    display: block;
+  }
+}
+
+.menu-nav-mobile-menu-container {
+  display: flex;
+  @include media($header-break) {
+    display: none;
+  }
+}
+
+.request-info-link {
+  display: none;
+
+  @include media($header-break) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: $color_white;
+    background-color: $color_blue;
+    padding: 1rem 1.75rem;
+    margin: 0 0 0 2rem;
+    border-radius: $border-radius;
+  }
+}
+
+.franchise-link {
+  display: none;
+
+  @include media($header-break) {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: $color_grey;
+    a {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 4vw;
+      font-weight: lighter;
+    }
+  }
+}
+.site-header {
+  .nav-links {
+    .nav-menu {
+      .menu-item {
+        position: relative;
+        color: $color_paragraph;
+        font-size: $font_size_main + 2px;
+        text-decoration: none;
+
+        .sub-menu {
+          max-height: 0;
+          background-color: $color_grey;
+          transition: all 0.3s ease-in;
+        }
+        &:hover {
+          .sub-menu {
+            max-height: calc(100% + 100px);
+          }
+        }
+
+        &-has-children {
+          overflow: hidden;
+          .sub-menu {
+            opacity: 0;
+            transition: all 0.3s ease-in;
+          }
+          &:hover {
+            overflow: unset;
+            .sub-menu {
+              overflow: unset;
+              display: block;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .menu-item {
+        overflow: hidden;
+        ul {
+          max-height: 0;
+
+          li {
+            width: 100%;
+
+            &:hover {
+              background-color: $color_medium_blue;
+              color: $color_white;
+            }
+          }
+        }
+      }
+
+      .sub-menu {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        flex-direction: column;
+        transform: translateX(-50%);
+        border-radius: $border-radius;
+        border: 1px solid $color_dark_grey;
+        z-index: 99;
+
+        &::before {
+          position: absolute;
+          left: 50%;
+          top: -22px;
+          transform: translateX(-50%);
+        }
+        li {
+          padding: 0.25rem 0.75rem;
+          text-align: left;
+
+          &:hover {
+            a {
+              color: $color_white;
+              text-decoration: underline;
+            }
+          }
+          &:first-child {
+            border-top-right-radius: $border-radius - 1px;
+            border-top-left-radius: $border-radius - 1px;
+          }
+          &:last-child {
+            border-right: none;
+            padding-right: 1rem;
+            border-bottom-right-radius: $border-radius - 1px;
+            border-bottom-left-radius: $border-radius - 1px;
+          }
+          a {
+            color: $color_paragraph;
+            font-size: $font_size_main - 2px;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}

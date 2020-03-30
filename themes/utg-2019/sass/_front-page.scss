@@ -1,0 +1,17 @@
+body.home {
+  text-align: center;
+
+  h2 {
+    font-size: $font_size_h2 + 6px;
+
+    @include media($tablet) {
+      font-size: $font_size_h2 + 20px;
+    }
+  }
+
+  @import 'fp-approaches';
+  @import 'fp-projectshowcase';
+  @import 'fp-latestevents';
+  @import 'fp-testimonials';
+
+}

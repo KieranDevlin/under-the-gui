@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/* Headings */
+
+h1 {
+  font-size: 56px;
+  font-weight: bold;
+  font-family: $font_header;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: $font_header;
+  color: $color_paragraph;
+}
+
+/* Paragraphs */
+
+p {
+  font-size: 16px;
+  font-family: $font_main;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  color: $color_paragraph;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $color_paragraph;
+}

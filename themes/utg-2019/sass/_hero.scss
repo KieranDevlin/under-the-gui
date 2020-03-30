@@ -1,0 +1,235 @@
+// Hero banner styling
+.home-hero-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  max-width: 100vw;
+
+  // Breakpoint mixin
+  @include media($tablet) {
+    height: 525px;
+    flex-direction: row;
+  }
+
+  // Hero image styling
+  img {
+    height: 100vh;
+    max-width: 100vw;
+
+    // Breakpoint mixin
+    @include media($tablet) {
+      height: 520px;
+      width: 100%;
+    }
+  }
+
+  // Hero banner text styling
+  .home-hero-text {
+    align-self: center;
+    color: #ffffff;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.5;
+
+    // Breakpoint mixin
+    @include media($tablet) {
+      top: 30%;
+    }
+
+    p {
+      font-family: $font_header;
+      font-weight: bold;
+      width: 50%;
+      font-size: $font_size_h2 + 3px;
+      margin: auto;
+      margin-bottom: 2rem;
+      color: $color_white;
+
+      @include media($tablet) {
+        font-size: $font_size_h1;
+        width: $base__space-unit + 40rem;
+      }
+    }
+  }
+
+  input[type='button'] {
+    font-weight: 700;
+    text-transform: uppercase;
+    border-color: $color_blue;
+    color: $color_blue;
+    background: $color_white;
+    font-size: $font_size_main - 2px;
+    padding: 0.75rem 1rem;
+    border: none;
+
+    @include media($tablet) {
+      font-size: $font_size_main;
+      padding: 1.25rem 2.75rem;
+    }
+
+    &:hover {
+      color: $color_white;
+      background: $color_blue;
+    }
+  }
+}
+
+.page-banner {
+  @extend .home-hero-banner;
+  height: 200px;
+
+  @include media($tablet) {
+    justify-content: flex-start;
+    align-items: center;
+    height: 275px;
+  }
+
+  .banner-text {
+    padding: 0 $site-padding-mobile;
+
+    @include media($tablet) {
+      padding: 0 $site-padding;
+    }
+
+    * {
+      color: $color_white;
+    }
+
+    .slug {
+      display: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+
+      @include media($tablet) {
+        font-size: 56px;
+      }
+    }
+  }
+}
+
+.post-banner {
+  @extend .page-banner;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $site-padding-mobile;
+  @include media($tablet) {
+    padding: 0 $site-padding;
+  }
+  .banner-text {
+    padding: 0;
+    * {
+      color: $color_paragraph;
+    }
+    .post-feature-image-title {
+      text-transform: capitalize;
+    }
+  }
+  img {
+    height: 100%;
+    width: 25%;
+    object-fit: contain;
+  }
+}
+
+//on pages with no featured image
+
+.page-banner-no-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  background-color: $color_blue;
+  @include media($tablet) {
+    height: 275px;
+  }
+  .banner-text {
+    padding: 0 $site-padding-mobile;
+    .page-feature-image-title {
+      color: $color_white;
+    }
+    p {
+      color: $color_white;
+      font-family: $font_header;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    @include media($tablet) {
+      padding: 0 $site-padding;
+    }
+  }
+}
+
+// about page banner
+.page-banner-about {
+  @extend .page-banner-no-image;
+  background-color: $color_white;
+  .banner-text {
+    width: 100%;
+    .page-feature-image-title {
+      color: $color_paragraph;
+    }
+    .nav {
+      justify-content: space-between;
+      max-width: 100%;
+    }
+  }
+}
+
+//single locations banner
+.page-banner-locations {
+  @extend .page-banner-no-image;
+  background-color: $color_green;
+  padding: 0 $site-padding-mobile;
+  height: 344px;
+  @include media($tablet) {
+    padding: 0 $site-padding;
+    height: 479px;
+  }
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    height: 80%;
+    width: 100%;
+    p,
+    h1 {
+      margin: 0;
+      width: 50%;
+    }
+    .button-container {
+      margin: 0 auto;
+      width: 201px;
+      @include media($tablet) {
+        margin: 0;
+      }
+    }
+    @include media($tablet) {
+      height: 304px;
+      width: 50%;
+      p,
+      h1 {
+        width: 80%;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  iframe {
+    display: none;
+    @include media($tablet) {
+      display: block;
+      height: 304px !important;
+      width: 608px !important;
+    }
+  }
+}

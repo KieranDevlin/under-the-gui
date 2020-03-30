@@ -1,0 +1,32 @@
+.error404 {
+  .site-main {
+    .banner-404 {
+      overflow: hidden;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include media($tablet) {
+        height: 600px;
+      }
+      
+      .home-button {
+        color: $color_blue;
+        background: $color_white;
+        width: auto;
+        transform: translateY(50px);
+
+        @include media($tablet) {
+          font-size: $font_size_main;
+          transform: translateY(105px);
+        }
+        &:hover {
+          background: $color_grey;
+          border: 1px solid white;
+        }
+      }
+    }
+  }
+}

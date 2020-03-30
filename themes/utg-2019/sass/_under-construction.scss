@@ -1,0 +1,41 @@
+.page {
+  .site-main {
+    .under-construction-banner {
+      overflow: hidden;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include media($tablet) {
+        height: 600px;
+      }
+
+      h1 {
+        font-family: 'Blox';
+        color: $color_white;
+        font-size: $font_size_main * 2.1;
+        font-weight: 100;
+
+        @include media($tablet) {
+            font-size: $font_size_main * 5;
+        }
+      }
+
+      .home-button {
+        color: $color_blue;
+        background: $color_white;
+        width: auto;
+
+        @include media($tablet) {
+            font-size: $font_size_main;
+        }
+        &:hover {
+            background: $color_grey;
+            border: 1px solid white;
+        }
+      }
+    }
+  }
+}

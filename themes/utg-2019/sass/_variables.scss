@@ -1,0 +1,55 @@
+// Structure
+
+$base__space-unit: 1.5rem;
+
+// Colors
+
+$color_black: #000000;
+$color_blue: #2ba2dd;
+$color_medium_blue: #5bb3e4;
+$color_light_blue: #8ecaeb;
+$color_green: #00a362;
+$color_grey: #eff1f6;
+$color_dark_grey: #595757;
+$color_yellow: #ffcc00;
+$color_medium_yellow: #ffd65a;
+$color_light_yellow: rgba(#ffe79a, 0.3);
+$color_red: #f0433d;
+$color_medium_red: #f1554f;
+$color_light_red: #faa8a5;
+$color_white: #ffffff;
+
+// Special colors
+
+$color_error_background: #f9d7d7;
+$color_paragraph: #333333;
+$color_faq_background: #e9f5fb;
+
+// A11y colors
+$color__background-screen: #f1f1f1;
+$color__text-screen: #21759b;
+
+// Typography
+
+$font_size_main: 16px;
+$font_size_h2: 28px;
+$font_size_h1: 56px;
+
+$font__main: 'Titillium Web';
+$font_main: 'Titillium Web';
+$font_header: 'Gotham';
+
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+// Media Query
+
+$tablet: 800px;
+$header-break: 900px;
+$desktop: 1000px;
+
+// Site content padding
+
+$site-padding: 7vw;
+$site-padding-mobile: 0.75rem;
+$border-radius: 5px;

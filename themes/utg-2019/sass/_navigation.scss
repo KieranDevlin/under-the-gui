@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+/* Links */
+
+a {
+  color: $color_blue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}

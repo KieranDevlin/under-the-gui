@@ -1,0 +1,112 @@
+// Project showcase styling
+section.project-showcase {
+
+  .flickity-prev-next-button {
+    display: none;
+  }
+
+  @include media(900px) {
+    .flickity-button {
+      color: $color_white;
+      background: transparent;
+    }
+
+    .flickity-prev-next-button {
+      display: inline;
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: 3.5rem;
+
+    @include media(780px) {
+      bottom: 1rem;
+    }
+
+    @include media(900px) {
+      bottom: -4rem;
+    }
+  }
+
+  /* white circles */
+  .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: $color_white;
+  }
+
+  /* fill-in selected dot */
+  .flickity-page-dots .dot.is-selected {
+    background: $color_dark_grey;
+  }
+
+
+  .project-showcase-container {
+    height: 35rem;
+    background-color: $color_blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+
+
+
+    @include media(900px) {
+      height: 600px;
+      justify-content: space-evenly;
+      padding-top: 0px;
+      padding-bottom: 6rem;
+    }
+
+
+    .showcase-header {
+      color: $color_white;
+      margin-bottom: 3rem;
+    }
+
+    .single-project-container {
+      width: 100%;
+
+      @include media(900px) {
+        display: flex;
+        justify-content: center;
+      }
+
+      .project-media {
+        pointer-events: none;
+        iframe {
+          max-width: 26rem;
+          border: 4px solid $color_white;
+          border-radius: 5px;
+
+          @include media(780px) {
+            max-width: 200px;
+          }
+
+          @include media($tablet) {
+            max-width: 640px;
+          }
+        }
+      }
+
+      .project-desc {
+        color: $color_white;
+        visibility: hidden;
+
+        @include media(900px) {
+          visibility: visible;
+          font-size: $font_size_main;
+          margin-left: 2rem;
+          text-align: left;
+          align-self: center;
+          width: 450px;
+
+          p {
+            height: 400px;
+          }
+        }
+      }
+    }
+  }
+}
